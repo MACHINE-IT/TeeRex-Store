@@ -12,7 +12,7 @@
 
 .filter-content {
     padding: 2rem;
-    max-height: calc(100% - 40px);
+    max-height: calc(100% - 46px);
     overflow-y: auto;
 
 }
