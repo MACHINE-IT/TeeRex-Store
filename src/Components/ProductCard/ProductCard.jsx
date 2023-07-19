@@ -1,7 +1,7 @@
 import React from 'react';
-import { ShoppingBagOutlined } from '@mui/icons-material';
+import { ShoppingBagOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 //import { CartState } from '../context/context'
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     addToCart,
@@ -18,7 +18,7 @@ const ProductCard = ({ productInfo }) => {
     const cart = useSelector((state) => state.cart);
 
     // const { state: { cart }, dispatch } = CartState()
-    //  const navigate = useNavigate()
+    const navigate = useNavigate()
 
     // const handleAddToCart = (product) => {
     //     dispatch({
@@ -57,8 +57,9 @@ const ProductCard = ({ productInfo }) => {
                             <div className='cart-actions'>
                                 <button
                                     className='checkout'
+                                    onClick={() => navigate("/cart")}
                                 >
-                                    <ShoppingBagOutlined className="shopping-bag-icon" />
+                                    <ShoppingCartOutlined className="shopping-bag-icon" />
                                     GO TO BAG
                                 </button>
                             </div>

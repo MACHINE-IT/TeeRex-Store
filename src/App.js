@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './redux/reducers';
@@ -9,6 +10,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from "./Components/Navbar/Navbar"
 import Products from "./Pages/Products/Products"
+import Cart from "./Pages/Cart/Cart";
 
 // const store = configureStore({
 //   reducer: rootReducer
@@ -19,7 +21,10 @@ function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Navbar />
-        <Products />
+        <Routes>
+          <Route exact path='/' element={<Products />} />
+          <Route exact path='/cart' element={<Cart />} />
+        </Routes>
       </PersistGate>
     </Provider>
   );

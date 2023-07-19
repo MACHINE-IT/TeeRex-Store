@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import "./Navbar.css";
 import { Avatar, Button, Stack, Container } from "@mui/material";
@@ -12,23 +13,29 @@ function Navbar() {
     return (
         <Box className="header navbar-container" justifyContent="space-between">
             <Box className="store-title">
-                <div>Reek Store</div>
+                <Link to="/" className="link">
+                    <div>TeeRex Store</div>
+                </Link>
             </Box>
             <Stack direction="row" spacing={4} alignItems="center">
-                <div>
-                    Products
-                </div>
-                <div>
-                    <div className='cart-icon'>
-                        {
-                            cart.cartItems.length ? <div className='cart-count'>{cart.cartItems.length}</div> : null
-                        }
-                        <ShoppingCartOutlined />
+                <Link to="/" className="link">
+                    <div>
+                        Products
                     </div>
+                </Link>
+                <div>
+                    <Link to="/cart" className="link">
+                        <div className='cart-icon'>
+                            {
+                                cart.cartItems.length ? <div className='cart-count'>{cart.cartItems.length}</div> : null
+                            }
+                            <ShoppingCartOutlined />
+                        </div>
+                    </Link>
                 </div>
 
             </Stack>
-        </Box>
+        </Box >
 
     )
 }
