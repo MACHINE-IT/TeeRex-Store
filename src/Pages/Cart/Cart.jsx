@@ -46,12 +46,6 @@ const Cart = () => {
         <>
             <div
                 className="cart-home-container"
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                }}
             >
                 {cart.length ? (
                     cart.map((item) => {

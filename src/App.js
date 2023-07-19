@@ -8,8 +8,9 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 import logo from './logo.svg';
 import './App.css';
-import Navbar from "./Components/Navbar/Navbar"
-import Products from "./Pages/Products/Products"
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import Products from "./Pages/Products/Products";
 import Cart from "./Pages/Cart/Cart";
 
 // const store = configureStore({
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/' element={<Products />} />
           <Route exact path='/cart' element={<Cart />} />
         </Routes>
+        <Footer />
       </PersistGate>
     </Provider>
   );

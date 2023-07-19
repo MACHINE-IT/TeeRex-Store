@@ -2,7 +2,7 @@
     position: fixed;
     margin-left: 3rem;
     width: max-content;
-    height: calc(100% - 200px);
+    height: calc(100% - 255px);
     /* padding-bottom: 20px; */
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
