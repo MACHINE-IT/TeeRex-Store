@@ -9,7 +9,7 @@ import { ShoppingCartOutlined } from '@mui/icons-material';
 function Navbar() {
     const { cartItems: cart } = useSelector((state) => state.cart);
     console.log("cart is in navbar>", cart);
-    console.log("cart length is> ", cart.cartItems.length);
+    console.log("cart length is> ", cart.length);
 
     const countItemsInBag = (cart) => {
         return cart.reduce((count, item) => {
@@ -34,7 +34,7 @@ function Navbar() {
                     <Link to="/cart" className="link">
                         <div className='cart-icon'>
                             {
-                                cart.length ? <div className='cart-count'>{() => countItemsInBag(cart)}</div> : null
+                                cart.length ? <div className='cart-count'>{countItemsInBag(cart)}</div> : null
                             }
                             <ShoppingCartOutlined />
                         </div>
