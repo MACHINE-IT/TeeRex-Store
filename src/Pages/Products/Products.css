@@ -1,3 +1,8 @@
+.home-box {
+    min-height: calc(100vh - 72px);
+    margin-bottom: 5rem;
+}
+
 .search-container {
     display: flex;
     align-items: center;

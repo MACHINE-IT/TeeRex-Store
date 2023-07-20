@@ -7,9 +7,16 @@ import Box from "@mui/material/Box";
 import { ShoppingCartOutlined } from '@mui/icons-material';
 
 function Navbar() {
-    const cart = useSelector((state) => state.cart);
+    const { cartItems: cart } = useSelector((state) => state.cart);
     console.log("cart is in navbar>", cart);
     console.log("cart length is> ", cart.cartItems.length);
+
+    const countItemsInBag = (cart) => {
+        return cart.reduce((count, item) => {
+            return count + item.quantity
+        }, 0)
+    }
+
     return (
         <Box className="header navbar-container" justifyContent="space-between">
             <Box className="store-title">
@@ -27,7 +34,7 @@ function Navbar() {
                     <Link to="/cart" className="link">
                         <div className='cart-icon'>
                             {
-                                cart.cartItems.length ? <div className='cart-count'>{cart.cartItems.length}</div> : null
+                                cart.length ? <div className='cart-count'>{() => countItemsInBag(cart)}</div> : null
                             }
                             <ShoppingCartOutlined />
                         </div>
