@@ -1,6 +1,7 @@
  .cart-home-container {
      min-height: calc(100vh - 72px);
      margin-bottom: 5rem;
+     margin-top: 2rem;
      display: flex;
      justify-content: center;
      align-items: center;
