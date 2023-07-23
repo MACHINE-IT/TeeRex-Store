@@ -8,8 +8,6 @@ import { ShoppingCartOutlined } from '@mui/icons-material';
 
 function Navbar() {
     const { cartItems: cart } = useSelector((state) => state.cart);
-    console.log("cart is in navbar>", cart);
-    console.log("cart length is> ", cart.length);
 
     const countItemsInBag = (cart) => {
         return cart.reduce((count, item) => {
