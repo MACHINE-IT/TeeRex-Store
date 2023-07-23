@@ -2,20 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './redux/reducers';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
-import logo from './logo.svg';
-import './App.css';
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Products from "./Pages/Products/Products";
 import Cart from "./Pages/Cart/Cart";
+import './App.css';
 
-// const store = configureStore({
-//   reducer: rootReducer
-// });
 
 function App() {
   return (

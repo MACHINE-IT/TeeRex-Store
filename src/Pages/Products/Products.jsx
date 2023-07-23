@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Avatar, Button, Stack, Container, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SearchOutlined, FilterAltOutlined } from '@mui/icons-material';
-import "./Products.css";
 import Filter from "../../Components/Filter/Filter"
 import ProductCard from "../../Components/ProductCard/ProductCard"
-import { config } from "../../config"
+import { fetchProductsAPI } from "../../AxiosData/AxiosFetch";
+import "./Products.css";
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -30,9 +28,9 @@ const Products = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get(`${config.productsCatalog}`);
-            setProducts(response.data);
-            setFilter(response.data)
+            const responseData = await fetchProductsAPI();
+            setProducts(responseData);
+            setFilter(responseData)
         } catch (e) {
             throw new Error(e)
         }
@@ -49,7 +47,6 @@ const Products = () => {
         setFilterState({ ...filterState, colour: newItems })
 
     }
-    console.log("filterwa ", filter);
 
     const handleFilterGender = (e) => {
         let newItems = [...filterState.gender]
@@ -131,13 +128,8 @@ const Products = () => {
                 });
             });
         }
-
-
         setFilter(filteredItems)
     }
-
-
-
 
     return (
         <>

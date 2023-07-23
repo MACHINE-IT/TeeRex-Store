@@ -1,13 +1,9 @@
 import React from 'react';
 import { ShoppingBagOutlined, ShoppingCartOutlined } from '@mui/icons-material';
-//import { CartState } from '../context/context'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     addToCart,
-    removeFromCart,
-    incrementQuantity,
-    decrementQuantity,
 } from '../../redux/actions';
 import "./ProductCard.css"
 
@@ -16,24 +12,13 @@ const ProductCard = ({ productInfo }) => {
 
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
-
-    // const { state: { cart }, dispatch } = CartState()
     const navigate = useNavigate()
-
-    // const handleAddToCart = (product) => {
-    //     dispatch({
-    //         type: "addToCart",
-    //         payload: product
-    //     })
-
-    // }
+    const isItemInCart = cart.cartItems.some((p) => p.id === id);
+    const cartItem = cart.cartItems.find((item) => item.id === id);
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
     };
-
-    const isItemInCart = cart.cartItems.some((p) => p.id === id);
-    const cartItem = cart.cartItems.find((item) => item.id === id);
 
     return (
         <div className='product-card'>
@@ -75,22 +60,6 @@ const ProductCard = ({ productInfo }) => {
                             </div>
                         )
                     }
-                    {/* // cart.some((p) => p.id === id) ? (
-                        //     <button
-                        //         className="checkout"
-                        //     // onClick={() => navigate('/cart')}
-                        //     >
-                        //         Checkout
-                        //     </button>
-                        // ) : (
-                        //     <button
-                        //         disabled={!quantity ? true : false}
-                        //         onClick={() => handleAddToCart(productInfo)}
-                        //     >
-                        //         Add to Cart
-                        //     </button>
-                        // ) */}
-                    {/* } */}
                 </div>
 
 

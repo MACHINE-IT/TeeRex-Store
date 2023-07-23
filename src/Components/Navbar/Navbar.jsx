@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import "./Navbar.css";
-import { Avatar, Button, Stack, Container } from "@mui/material";
+import { Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import { ShoppingCartOutlined } from '@mui/icons-material';
 

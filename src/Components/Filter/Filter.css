@@ -6,19 +6,33 @@
     /* padding-bottom: 20px; */
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     z-index: 100;
 }
 
 .filter-content {
     padding: 2rem;
-    max-height: calc(100% - 46px);
+    max-height: calc(100% - 45px);
     overflow-y: auto;
 
 }
 
+.filter-option-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: -10px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-top: -10px;
+}
+
 @media screen and (max-width: 492px) {
-    .filter-card {
+    .filter-card.filter-mobile {
         display: none;
     }
 
@@ -36,7 +50,6 @@
         margin-left: 0rem;
         width: max-content;
         height: calc(100% - 200px);
-        /* padding-bottom: 20px; */
         background-color: white;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         overflow-y: auto;
